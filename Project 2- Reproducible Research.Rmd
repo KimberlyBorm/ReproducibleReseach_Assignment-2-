@@ -12,12 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Synopsis
-Two main questions are addressed in this report:
 
-1. Across the United States, which types of events are most harmful with respect to population health?
-2. Across the United States, which types of events have the greatest economic consequences?
+This report analyzes NOAA's Storm Data to evaluate the effects of weather events on population health and economic loss in the United States. Data is processed and compiled by event type, calculating fatalities, injuries, and monetary damage. 
 
-
+Graphical plots reveal that **tornadoes** are the most deadly (fatalities), and also have the largest effect on **population health** (fatalities+injuries). While **floods** cause the highest **economic damage**. Percentage analyses emphasizes the significant contributions of these events to overall impacts. The findings offer insights for improving disaster management and policy decisions.
 
 ## Data Processing
 
@@ -38,14 +36,13 @@ Data was loaded from web-based database. Next, the downloaded file was used to c
         names(stormdata)
 ```
 
-<br><br>
-
-To answer these questions the original data was modified into three groups.
+The original data was modified into three groups.
 
 1. Total fatalities by weather event.
 2. Total fatalities and injuries by weather event.
-3. Total cost of property and crop damage per weather event. 
+3. Total cost of property and crop damage by weather event. 
 
+<br><br>
 
 First the data is compiling by total fatalities per weather event (EVTYPE) and the top 5 most fatal weather events are selected.  
 
@@ -124,7 +121,7 @@ This data will be used to answer which types of events have the greatest economi
 
 ## Results
 
-We will first address population health in two parts. 
+We will address population health in two parts. 
 
 First, by looking solely at fatalities from each weather events to determine which storms are the most deadly overall. 
 
@@ -173,9 +170,9 @@ Next, we will look at fatalities and injuries to see which weather events have t
                      y = "Weather Event")
 ```
          
-This shows that tornado are the most harmful to overall health. Excessive heat is next but a much smaller portion of risk to population health. 
+This shows that tornado are the most harmful to overall health. Excessive heat is next, but comprised a much smaller portion of impact to population health. 
  
-To further demonstrate the amount of risk these events pose, the percentage of overall health impact is calculated. 
+To further demonstrate the effect these events have, the percentage of overall health impact is calculated. 
 
 ```{r}
             #find overall injuries from the dataset
@@ -194,7 +191,7 @@ To further demonstrate the amount of risk these events pose, the percentage of o
 
 Tornadoes account for about 60% of all storm related injuries and deaths, and all others events account for less than 6%. 
 
-This confirms that tornadoes are the largest risk to population health of all storm related events.
+This confirms that tornadoes have the largest impact to population health of all storm related events.
 
 <br><br>
 
@@ -213,7 +210,7 @@ Now we address economic consequences by looking at which weather events cause th
 
 Flood contribute to the largest economic damage, followed by typhoons/hurricanes, and again by tornadoes. 
 
-It is worth poitning out that flood damage appears to be more than double the damage cause by any other weather event. 
+It is worth pointing out that flood damage appears to be more than double the damage cause by any other single weather event. 
 
 We will confirm this with a percentage analysis of overall damage. 
 
@@ -232,8 +229,7 @@ We will confirm this with a percentage analysis of overall damage.
             knitr::kable(damage_table)
 ```
 
-This confirms that floods pose the largest economic risk, and are more than double the economic damage of any other weather event.
+This confirms that floods have the largest economic impact, about 32%, and are more than double the economic damage of any other weather event.
 
-Also, hurricane/typhoons and tornadoes combined pose almost as large an economic risk as floods. 
-
+Also, hurricane/typhoons and tornadoes economic damage combined, about 28%, represent almost as large an economic impact as floods. 
 
