@@ -1,5 +1,5 @@
 ---
-title: "Storm Types Effects on Population Health and Econmoic Loss: what weather events are the most harmful? "
+title: "Storm Types Effects on Population Health and Economic Loss: What weather events are the most impactful? "
 author: "Kimberly Bormann"
 date: "2025-03-20"
 output: html_document
